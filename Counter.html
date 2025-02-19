@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Counter</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+    <h1>Counter</h1>
+    <p id="value">0</p>
+    <button onclick="plus()">+</button>
+    <button onclick="minus()">-</button>
+</body>
+<script>
+    let p = document.getElementById('value');
+    let num = parseInt(p.innerText);
+    function plus() {
+        num++;
+        p.innerText = num;
+    }
+    function minus() {
+        if (num > 0) {
+            num--;
+            p.innerText = num;
+        } else {
+            alert("Cannot Go Below 0");
+        }
+    }
+</script>
+</html>

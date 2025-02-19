@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+<style>
+    body {
+        text-align: center;
+        background-color: #f4f4f4;
+        margin-top: 50px;
+    }
+
+    .container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+    }
+
+    input {
+        padding: 10px;
+        font-size: 16px;
+        margin: 10px;
+        width: 200px;
+    }
+
+    button {
+        background-color: #007BFF;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+    #countdown {
+        font-size: 32px;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Countdown Timer</h1>
+        <input type="number" id="time" placeholder="Enter seconds">
+        <button onclick="startCountdown()">Start</button>
+        <p id="countdown"></p>
+    </div>
+</body>
+
+<script>
+    let countdown;
+    function startCountdown() {
+        let time = parseInt(document.getElementById("time").value);
+        let countdownDisplay = document.getElementById("countdown");
+
+        if (isNaN(time) || time <= 0) {
+            alert("Please enter a valid number of seconds.");
+            return;
+        }
+
+        clearInterval(countdown);
+        countdownDisplay.innerText = time;
+
+        countdown = setInterval(() => {
+            time--;
+            countdownDisplay.innerText = time;
+
+            if (time <= 0) {
+                clearInterval(countdown);
+                countdownDisplay.innerText = "Time's up!";
+            }
+        }, 1000);
+    }
+</script>
+</html>
