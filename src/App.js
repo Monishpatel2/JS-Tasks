@@ -1,24 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import CounterTimer from './Components/CounterTimer';
+import CounterWithLocalStorage from './Components/Counterwithlocalstorage';
+import MiniCalculator from './Components/MiniCalculator';
+import FormWithValidation from './Components/FormWithValidation';
+import FormWithValidationusinghooks from './Components/FormWithValidationusinghooks';
+import SignupApp from './Components/SignUp';
+import TodoList from './Components/Todolist';
+import APIToTable from './Components/APIToTable';
+import FakeStore from './Components/FakeStore';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <div className="nav-container">
+      <nav>
+        <ul>
+          <li><Link to="/">Counter Timer</Link></li>
+          <li><Link to="/CounterWithLocalStorage">Counter with Local Storage</Link></li>
+          <li><Link to="/MiniCalculator">Mini Calculator</Link></li>
+          <li><Link to="/FormWithValidation">Simple Form</Link></li>
+          <li><Link to="/FormWithValidationusinghooks">Form using hooks</Link></li>
+          <li><Link to="/SignUp">SignUp App</Link></li>
+          <li><Link to="/TodoList">To-Do List</Link></li>
+          <li><Link to="/APIToTable">API To Table</Link></li>
+          <li><Link to="/FakeStore">Fake Store</Link></li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<CounterTimer />} />
+        <Route path="/CounterWithLocalStorage" element={<CounterWithLocalStorage />} />
+        <Route path="/MiniCalculator" element={<MiniCalculator />} />
+        <Route path="/FormWithValidation" element={<FormWithValidation />} />
+        <Route path="/FormWithValidationusinghooks" element={<FormWithValidationusinghooks />} />
+        <Route path="/SignUp" element={<SignupApp />} />
+        <Route path="/TodoList" element={<TodoList />} />
+        <Route path="/APIToTable" element={<APIToTable />} />
+        <Route path="/FakeStore" element={<FakeStore />} />
+      </Routes>
     </div>
+  </Router>
   );
 }
 

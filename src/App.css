@@ -1,38 +1,182 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+.heading{
+  font-size: 50px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+.counter-container {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.counter {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.start {
+  background-color: #4caf50;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.stop {
+  background-color: #f44336;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pause {
+  background-color: #ffeb3b;
+  color: black;
+}
+.delete {
+  background-color: blue;
+  color: white;
+}
+.nav-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+}
+
+nav li {
+  margin: 10px;
+}
+
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+}
+
+nav a:hover {
+  background-color: #575757;
+}
+.input-field {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: calc(100% - 30px);
+  max-width: 200px;
+}
+.error {
+  color: red;
+  font-size: 0.8rem;
+  margin: 5px 0;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.input-field {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+} 
+.error {
+  color: red;
+  font-size: 0.8rem;
+  margin: 5px 0;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.input-field {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.finput-field {
+  padding: 15px 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.signup-page h2 {
+  color: #16a34a;
+}
+.signup-page button {
+  background-color: #16a34a;
+}
+.signup-page button:hover {
+  background-color: #22c55e;
+}
+
+/* Login Page Styles */
+.login-page h2 {
+  color: #1d4ed8;
+}
+.login-page button {
+  background-color: #1d4ed8;
+}
+.login-page button:hover {
+  background-color: #2563eb;
+}
+
+/* Update Password Page Styles */
+.update-password-page h2 {
+  color: #d97706;
+}
+.update-password-page button {
+  background-color: #d97706;
+}
+.update-password-page button:hover {
+  background-color: #f59e0b;
 }
