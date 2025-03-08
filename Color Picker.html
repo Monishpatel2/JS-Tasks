@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>RGB Color Picker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .color-box {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border: 2px solid black;
+        }
+
+        .slider-container {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>RGB Color Picker</h1>
+    <div class="color-box" id="colorBox"></div>
+    <div class="slider-container">
+        <label>Red: <input type="range" id="red" min="0" max="255" value="0" oninput="updateColor()"></label>
+    </div>
+    <div class="slider-container">
+        <label>Green: <input type="range" id="green" min="0" max="255" value="0" oninput="updateColor()"></label>
+    </div>
+    <div class="slider-container">
+        <label>Blue: <input type="range" id="blue" min="0" max="255" value="0" oninput="updateColor()"></label>
+    </div>
+    <script>
+        function updateColor() {
+            let r = document.getElementById("red").value;
+            let g = document.getElementById("green").value;
+            let b = document.getElementById("blue").value;
+            let colorBox = document.getElementById("colorBox");
+            colorBox.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        }
+    </script>
+</body>
+</html>
